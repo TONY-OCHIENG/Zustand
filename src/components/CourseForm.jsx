@@ -14,11 +14,13 @@ function CourseForm() {
             id: Math.ceil(Math.random() * 10000),
             title: courseTitle
         })
+
+        setCourseTitle("")
     }
   return (
     <div>
         <form action="" onSubmit={handleSubmit}>
-            <input type="text" name="title" id="title" placeholder='Course title'/>
+            <input type="text" value={courseTitle} name="title" onChange={(event) => setCourseTitle(event.target.value)} id="title" placeholder='Course title'/>
             <button>Add course</button>
         </form>
     </div>
