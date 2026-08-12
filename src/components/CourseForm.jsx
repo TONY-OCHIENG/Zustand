@@ -17,12 +17,22 @@ function CourseForm() {
 
         setCourseTitle("")
     }
+
+    const handleChange = (event) => {
+        const { name, value} = event.target
+        setCourseTitle((prev) => ({
+            ...prev,
+            [name] : value
+        }))
+    }
+    console.log(courseTitle)
   return (
     <div>
         <form action="" onSubmit={handleSubmit}>
-            <input type="text" value={courseTitle} name="title" onChange={(event) => setCourseTitle(event.target.value)} id="title" placeholder='Course title'/>
+            <input type="text" name="title" onChange={handleChange} id="title" placeholder='Course title'/>
             <button>Add course</button>
         </form>
+
     </div>
   )
 }
